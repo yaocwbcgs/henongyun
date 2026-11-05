@@ -4,6 +4,8 @@
 
 前端为米白纸感 + 墨绿油墨的杂志式设计，后端为 Node.js + SQLite 的真实业务实现，含服务端鉴权、文件存储、SSE 实时推送与后台定时任务。
 
+**代码仓库**：https://github.com/yaocwbcgs/henongyun
+
 ---
 
 ## 快速开始
@@ -142,6 +144,19 @@ npm --prefix server start          # http://localhost:3001
 - [部署与配置](docs/deploy.md)
 - [接口说明](docs/api.md)
 - [验收与测试报告](docs/test-report.md)
+
+## 持续集成
+
+仓库内置 GitHub Actions（`.github/workflows/ci.yml`），每次 push 与 PR 自动执行：安装依赖 → 构建前端 → 启动服务 → 运行 30 项端到端验收。CI 使用独立的测试密钥与测试数据库，不接触生产配置。
+
+本地复现同等校验：
+
+```bash
+npm --prefix server install && npm --prefix web install
+npm --prefix web run build
+npm --prefix server start          # 另开终端
+npm --prefix server run test:e2e   # 30 项验收
+```
 
 ## 许可
 
