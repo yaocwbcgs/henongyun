@@ -1,0 +1,35 @@
+{
+  "name": "henongyun-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "禾农云 · 农业综合服务平台服务端",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "seed": "node src/db/run-seed.js",
+    "test:e2e": "node test/e2e.mjs"
+  },
+  "engines": {
+    "node": ">=20.11"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.10.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.4.1",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "nodemailer": "^6.9.16",
+    "sharp": "^0.33.5",
+    "zod": "^3.23.8"
+  }
+}
